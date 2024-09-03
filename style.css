@@ -1,9 +1,112 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 239, 233);
 }
 
 .header-background {
-    background-color: gray;
-    height: 32px;
+    border-bottom: 1px solid rgb(210, 207, 199);
+}
+
+#logo_proespon {
+    width: 200px;
+}
+
+.header__container {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__btn button {
+    margin: 0 20px 0 20px;
+    border: none;
+    padding: 5px 2px;
+    transition: 550ms;
+}
+
+.header__btn button:hover {
+    background-color: rgb(197, 197, 197);
+    border-radius: 180px;
+    transition: 500ms;
+}
+
+.header__btn button a {
+    font-weight: 400;
+    font-size: 20px;
+    font-family: inherit;
+    text-decoration: none;
+    color: black;
+}
+
+.header__btn #btn__login {
+    background-color: rgb(99, 99, 255);
+    border-radius: 180px;
+    padding: 9px 15px;
+}
+
+.header__btn #btn__login a {
+    color: #ffffff;
+}
+
+.main-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.main-container .main__title {
+    text-align: center;
+}
+
+.main__title h1 {
+    font-size: 47px;
+    font-weight: 400;
+    font-family: "__sourceSerif4_a2fd76", "__sourceSerif4_Fallback_a2fd76";
+}
+
+.main__title h2 {
+    font-weight: 200;
+    margin: 10px 0 20px 0;
+}
+
+textarea {
+    position: sticky;
+    left: 500px;
+    padding: 34px 34px 28px;
+    width: 900px;
+    height: 180px;
+    font-size: 20px;
+    border: 1px solid rgb(210, 207, 199);
+    border-radius: 30px;
+}
+
+textarea ::placeholder {
+    color: rgb(146, 146, 146);
+}
+
+textarea:focus {
+    box-shadow: 0 0 0 0;
+    border: 1px solid rgb(224, 222, 216);
+    outline: 0;
+}
+
+.btn__resumir {
+    position: relative;
+    right: 12px;
+    top: 70px;
+    background-color: rgb(99, 99, 255);
+    font-size: 27px;
+    padding: 9px 15px;
+    border: none;
+    border-radius: 30px;
+}
+
+.btn__resumir a {
+    text-decoration: none;
+    color: #ffffff;
 }

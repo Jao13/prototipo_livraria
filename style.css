@@ -97,16 +97,18 @@ textarea:focus {
 
 .btn__resumir {
     position: relative;
-    right: 12px;
+    left: 880px;
     top: 70px;
     background-color: rgb(99, 99, 255);
     font-size: 27px;
     padding: 9px 15px;
     border: none;
     border-radius: 30px;
+    color: #ffffff;
+    cursor: pointer;
 }
 
-.btn__resumir a {
-    text-decoration: none;
-    color: #ffffff;
+#resumir-resultado {
+    position: relative;
+    top: 100px;
 }

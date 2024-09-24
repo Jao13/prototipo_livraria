@@ -54,13 +54,47 @@
                 <h2>Leia, Curte e Aprenda!</h2>
             </div>
         </section>
-        <textarea src="script.js" placeholder="Coloque seu texto aqui!"></textarea>
-
-        <button class="btn__resumir">
-            <a href="/">
-                <span>Resumir</span>
-            </a>
-        </button>
+        
+        <div class="containerResumo">
+            <textarea id="input-texto" placeholder="Coloque seu texto aqui!"></textarea>
+            <br>
+            <button id="botao-resumir" class="btn__resumir">Resumir</button>
+            <div id="resumir-resultado">
+        </div>
     </main>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+      <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+        const genAI = new GoogleGenerativeAI("AIzaSyDd5SAoC_oU8oidJhc4SsbydGLBx2-h3Ls");
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      
+        async function resumirTexto() {
+          const textoOriginal = document.getElementById('input-texto').value;
+          const prompt = `Resuma o seguinte texto: ${textoOriginal}`;
+          try {
+            const resultado = await model.generateContent(prompt);
+            const resumo = resultado.response.text();
+            const receberResumo = document.createElement('textarea');
+            receberResumo.value = resumo;
+            receberResumo.readOnly = true;
+            receberResumo.style.width = '100%';
+            receberResumo.style.marginTop = '20px';
+            receberResumo.rows = 10;
+            const resumoDiv = document.getElementById('resumir-resultado');
+            resumoDiv.innerHTML = ''; 
+            resumoDiv.appendChild(receberResumo);
+          }
+          catch (error) {
+            console.error('Erro ao gerar o resumo:', error); 
+          }
+        }
+        document.getElementById('botao-resumir').addEventListener('click', resumirTexto);
+    </script>
 </body>
 </html>

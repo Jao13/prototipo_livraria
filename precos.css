@@ -223,6 +223,14 @@
     letter-spacing: -0.36px;
 }
 
+.desconto .valor-desconto {
+    background-color: rgb(99, 99, 255);
+    padding: 3px 3px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
 .btn-compra {
     position: relative;
     box-shadow: none;

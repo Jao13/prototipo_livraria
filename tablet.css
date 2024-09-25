@@ -1,0 +1,16 @@
+@media screen and (min-width:703px) {
+    textarea{
+        position: relative;
+        left: 142px;
+    }
+
+    .btn__resumir {
+        position: relative;
+        left: 70vh;
+    }
+
+    #resumir-resultado {
+        position: relative;
+        right: 140px;
+    }
+}

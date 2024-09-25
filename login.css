@@ -139,12 +139,12 @@ body {
     border-radius: 500px;
     font-size: 1rem;
     font-weight: bolder;
-    color: #000;
+    color: #fff;
     text-align: center;
     margin: 32px 0;
     height: 48px;
     background: transparent;
-    background-color: #1ed760;
+    background-color: rgb(99, 99, 255);
     width: 324px;
 }
 

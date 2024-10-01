@@ -108,6 +108,24 @@ textarea:focus {
     cursor: pointer;
 }
 
+.btn__falar {
+    background-color: rgb(99, 99, 255);
+    font-size: 27px;
+    padding: 9px 15px;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.btn__pausar {
+    background-color: rgb(99, 99, 255);
+    font-size: 27px;
+    padding: 9px 15px;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
 #resumir-resultado {
     position: relative;
     top: 100px;

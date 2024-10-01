@@ -61,6 +61,8 @@
             <br>
             <button id="botao-resumir" class="btn__resumir">Resumir</button>
             <div id="resumir-resultado">
+            <button id="botao-falar" class="btn__falar">Falar</button>
+            <button id="botao-pausar" class="btn__pausar">Pausar</button>
         </div>
     </main>
     <script type="importmap">
@@ -90,12 +92,44 @@
             const resumoDiv = document.getElementById('resumir-resultado');
             resumoDiv.innerHTML = ''; 
             resumoDiv.appendChild(receberResumo);
+
+            document.getElementById('botao-falar').style.display = 'inline';
+            document.getElementById('botao-pausar').style.display = 'inline';
+
+            document.getElementById('botao-falar').setAttribute('data-resumo', resumo);
           }
           catch (error) {
             console.error('Erro ao gerar o resumo:', error); 
           }
         }
+          
+          function falarResumo() {
+        const resumo = document.getElementById('botao-falar').getAttribute('data-resumo');
+        
+        if (resumo) {
+        const fala = new SpeechSynthesisUtterance(resumo);
+            fala.lang = 'pt-BR', 'en-US'; // Idioma Português Brasileiro
+            fala.pitch = 1;      // Tom da fala
+            fala.rate = 1;       // Velocidade normal
+            fala.volume = 1;     // Volume máximo
+
+        window.speechSynthesis.speak(fala); // Converte texto em áudio
+        } else {
+        console.log('Nenhum resumo encontrado para falar.');
+        }
+    }
+
+        function pausarAudio() {
+        if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        }
+    }
+        document.getElementById('botao-falar').style.display = 'none';
+        document.getElementById('botao-pausar').style.display = 'none';
+        
         document.getElementById('botao-resumir').addEventListener('click', resumirTexto);
+        document.getElementById('botao-falar').addEventListener('click', falarResumo);
+        document.getElementById('botao-pausar').addEventListener('click', pausarAudio);
     </script>
 </body>
 </html>
